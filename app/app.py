@@ -6,21 +6,21 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/login', methods=['POST'])
-def login():
+@app.route('/acesso', methods=['POST'])
+def acesso():
     username = request.form['username']
     password = request.form['password']
     
-    if username == 'gabriel@' and password == '123':
+    if username == 'magno' and password == '123':
         return redirect('/servicos')
     else:
         print('Usuário não encontrado')
         return "Usuário ou senha incorretos", 401
 
 
-@app.route('/pagina2')
-def pagina2():
-    return render_template('pagina2.html')
+@app.route('/cadastro')
+def cadastro():
+    return render_template('cadastro.html')
 
 @app.route('/servicos')
 def servicos():
