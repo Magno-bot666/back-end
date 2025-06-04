@@ -6,17 +6,20 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
 @app.route('/acesso', methods=['POST'])
 def acesso():
     username = request.form['username']
     password = request.form['password']
-    
+   
     if username == 'magno' and password == '123':
         return redirect('/servicos')
     else:
         print('Usuário não encontrado')
         return "Usuário ou senha incorretos", 401
-
 
 @app.route('/cadastro')
 def cadastro():
@@ -26,6 +29,17 @@ def cadastro():
 def servicos():
     return render_template('servicos.html')
 
+
+@app.route('/add_cadastro', methods=['POST'])
+def add_cadastro():
+    email = request.form['email']
+    nome = request.form['nome']
+    senha = request.form['senha']
+    endereco = request.form['endereco']
+    cpf = request.form['cpf']
+    datanasc = request.form['datanasc']
+
+    return print(f"cadastro realizado com sucesso: {email}, {nome}, {senha}, {endereco}, {cpf}, {datanasc}")
 
 if __name__ == '__main__':
     app.run(debug=True)
