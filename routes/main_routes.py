@@ -5,11 +5,3 @@ main_bp = Blueprint('main', __name__)
 @main_bp.route('/')
 def index():
     return render_template('index.html')
-
-@main_bp.route('/contato')
-def contato():
-    return render_template('contato.html')
-
-@main_bp.route('/servicos')
-def servicos():
-    return render_template('servicos.html')
