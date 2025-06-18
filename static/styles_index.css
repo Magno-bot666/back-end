@@ -1,144 +1,113 @@
+/* Resetando margens e preenchimentos */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@400;600&display=swap');
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #f0f8ff;
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    header {
-      background: linear-gradient(90deg, #ff416c, #ff4b2b);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      box-shadow: 0 4px 8px rgba(255, 75, 43, 0.4);
-    }
-    header button {
-      background-color: #fff;
-      color: #ff4b2b;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      font-weight: 700;
-      font-size: 1rem;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      font-family: 'Fredoka One', cursive;
-      letter-spacing: 1px;
-      box-shadow: 0 3px 8px rgba(255, 75, 43, 0.5);
-    }
-    header button:hover {
-      background-color: #ff4b2b;
-      color: #fff;
-      box-shadow: 0 5px 15px rgba(255, 75, 43, 0.7);
-    }
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .banner {
-      position: relative;
-      width: 100%;
-      max-width: 1000px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-      margin-bottom: 3rem;
-    }
-    .banner img {
-      width: 100%;
-      height: auto;
-      display: block;
-      filter: brightness(0.85);
-      transition: transform 0.5s ease;
-    }
-    .banner:hover img {
-      transform: scale(1.05);
-      filter: brightness(1);
-    }
-    .banner-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #fff;
-      text-align: center;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-      padding: 0 1rem;
-      font-family: 'Fredoka One', cursive;
-    }
-    .banner-text h1 {
-      font-size: 3.5rem;
-      margin: 0 0 0.4rem;
-      letter-spacing: 3px;
-    }
-    .banner-text p {
-      font-size: 1.5rem;
-      margin: 0;
-      font-weight: 500;
-    }
+/* Corpo da página */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  line-height: 1.6;
+}
 
-    .banners-row {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: 1000px;
-      width: 100%;
-    }
+/* Cabeçalho */
+header {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
 
-    .small-banner {
-      flex: 1 1 300px;
-      border-radius: 15px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background-color: #fff;
-    }
-    .small-banner img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .small-banner:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(255,75,43,0.3);
-    }
-    .small-banner:hover img {
-      transform: scale(1.1);
-    }
-    .small-banner-text {
-      padding: 1rem 1.2rem;
-      font-family: 'Fredoka One', cursive;
-      color: #ff4b2b;
-      font-size: 1.3rem;
-      text-align: center;
-    }
+.login-btn {
+  padding: 10px 20px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-    @media (max-width: 768px) {
-      .banner-text h1 {
-        font-size: 2.5rem;
-      }
-      .banner-text p {
-        font-size: 1.2rem;
-      }
-      .small-banner {
-        flex: 1 1 100%;
-        max-width: 100%;
-      }
-    }
+.login-btn:hover {
+  background-color: #e64a19;
+}
+
+/* Banner principal */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Linha de banners menores */
+.banners-row {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.small-banner {
+  position: relative;
+  width: 30%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.small-banner:hover {
+  transform: scale(1.05);
+}
+
+.small-banner-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .banners-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .small-banner {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+}
